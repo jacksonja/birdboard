@@ -1,7 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">Create a Project</h2>
-    </x-slot>
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight">Create a Project</h2>
 
     <form method="POST" action="/projects">
         @csrf
