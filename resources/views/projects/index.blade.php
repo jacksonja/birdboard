@@ -1,23 +1,22 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Birdboard</title>
-</head>
-<body>
-    <h1>Birdboard</h1>
+<x-app-layout>
+    <header class="flex justify-between mb-3 py-4">
+        <h2 class="text-gray-500 text-md">My Projects</h2>
+        <a class="button" href="/projects/create">New Project</a>
+    </header>
 
-    <ul>
+    <main class="lg:flex lg:flex-wrap -mx-3">
         @forelse($projects as $project)
-            <li>
-                <a href="{{ $project->path() }}">{{ $project->title }}</a>
-            </li>
+            <div class="lg:w-1/3 px-3 pb-6">
+                <div class="bg-white p-5 rounded-lg shadow h-60">
+                    <h3 class="text-xl py-4 -ml-5 border-l-4 border-sky-300 pl-4 mb-3">
+                        <a href="{{ $project->path() }}">{{ $project->title }}</a>
+                    </h3>
+
+                    <div class="text-gray-400">{{ Str::limit($project->description) }}</div>
+                </div>
+            </div>
         @empty
-            <li>No projects yet.</li>
+            <div>No projects yet.</div>
         @endforelse
-    </ul>
-</body>
-</html>
+    </main>
+</x-app-layout>

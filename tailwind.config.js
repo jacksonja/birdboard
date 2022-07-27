@@ -10,9 +10,14 @@ module.exports = {
 
     theme: {
         extend: {
-            fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            boxShadow: {
+                DEFAULT: '0 0 5px 0 rgba(0, 0, 0, 0.08)'
             },
+            colors: {
+                gray: {
+                    100: '#f5f6f9'
+                }
+            }
         },
     },
 
