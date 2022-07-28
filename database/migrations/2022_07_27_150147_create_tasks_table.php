@@ -12,6 +12,7 @@ return new class extends Migration {
 
             $table->foreignId('project_id');
             $table->text('body');
+            $table->boolean('completed')->default(false);
 
             $table->timestamps();
         });
