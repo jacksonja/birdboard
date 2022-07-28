@@ -16,6 +16,7 @@ return new class extends Migration {
                 ->onDelete('cascade');
             $table->string('title');
             $table->text('description');
+            $table->text('notes')->nullable();
 
             $table->timestamps();
         });

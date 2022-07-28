@@ -3,7 +3,7 @@
     <div class="container mx-auto">
         <div class="flex justify-between items-center py-2">
             <h1>
-                <a href="{{ route('dashboard') }}">
+                <a href="/projects">
                     <img src="/images/logo.svg" alt="Birdboard">
                 </a>
             </h1>
