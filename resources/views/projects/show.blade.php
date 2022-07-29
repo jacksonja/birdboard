@@ -4,7 +4,7 @@
             <a class="text-gray-500 text-md" href="/projects">My Projects</a> / {{ $project->title }}
         </p>
 
-        <a class="button" href="/projects/create">New Project</a>
+        <a class="button" href="{{ $project->path().'/edit' }}">Edit Project</a>
     </header>
 
     <main>
@@ -52,6 +52,16 @@
                         >{{ $project->notes }}</textarea>
                         <button type="submit" class="button">Save</button>
                     </form>
+
+                    @if ($errors->any())
+                        <div class="field mt-6">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li class="text-red-500 text-sm list-disc">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 </div>
             </div>
             <div class="lg:w-1/4 px-3">
