@@ -6,7 +6,6 @@ use App\Models\Project;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Str;
-use Tests\Setup\ProjectFactory;
 use Tests\TestCase;
 
 class ManageProjectsTest extends TestCase
@@ -52,7 +51,7 @@ class ManageProjectsTest extends TestCase
     /** @test */
     public function a_user_can_update_a_project()
     {
-        $project = ProjectFactory::create();
+        $project = Project::factory()->create();
 
         $attributes = ['notes' => 'Changed'];
 
@@ -68,8 +67,7 @@ class ManageProjectsTest extends TestCase
     {
         $this->signIn();
 
-        $project = app(ProjectFactory::class)
-            ->create();
+        $project = Project::factory()->create();
 
         $this->actingAs($project->owner)
             ->get($project->path())
